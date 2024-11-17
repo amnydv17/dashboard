@@ -178,7 +178,7 @@ export default function Dashboard() {
                 <div className="bg-white p-5 rounded-lg w-80 relative">
                   {/* HTML5 Icon */}
                   <div className="absolute top-4 right-4">
-                    <img
+                    <Image
                       src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
                       alt="HTML5 Logo"
                       className="w-8"
@@ -286,7 +286,7 @@ export default function Dashboard() {
                       />
                     
                       <div className="absolute inset-3 flex items-center justify-center bg-white rounded-full m-4">
-                          <img
+                          <Image
                             src="/target.png" // Replace with the path to your target icon or adjust as needed
                             alt="Target icon"
                             className="w-10 h-10"
