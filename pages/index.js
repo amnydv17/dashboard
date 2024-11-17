@@ -46,7 +46,7 @@ export default function Dashboard() {
         
         {/*Main Box */}
         <div className=" bg-white overflow-hidden p-8">
-          <h1 className="text-xl mb-5 ml-5">Skill Test</h1>
+          <h1 className="text-xl mb-5 ml-5">SKILL TEST</h1>
 
           {/* Start Box */}
           <div className="w-full bg-white p-4 ">
@@ -199,7 +199,7 @@ export default function Dashboard() {
                   <div className="space-y-4">
                     <div>
                       <label className="block text-gray-600 mb-1">
-                        Update your <strong className="text-bold">Rank</strong>
+                        Update Your <strong className="text-bold">Rank</strong>
                       </label>
                       <input
                         type="number"
