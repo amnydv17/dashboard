@@ -4,9 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "./components/Layout";
 import ComparisonGraph from "./components/ComprisonGraph";
-import SyllabusAnalysis from './components/SyllabusAnalysis';
-
-
+import SyllabusAnalysis from "./components/SyllabusAnalysis";
 
 export default function Dashboard() {
   const totalQuestions = 15;
@@ -43,7 +41,6 @@ export default function Dashboard() {
   return (
     <Layout>
       <div className=" flex flex-col sm:flex-row min-h-screen bg-white border-gray-200">
-        
         {/*Main Box */}
         <div className=" bg-white overflow-hidden p-8">
           <h1 className="text-xl mb-5 ml-5">SKILL TEST</h1>
@@ -181,7 +178,9 @@ export default function Dashboard() {
                     <Image
                       src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
                       alt="HTML5 Logo"
-                      className="w-8"
+                      width={40} // 10 * 4 for 40px (since 1 rem = 4px)
+                      height={40} // 10 * 4 for 40px
+                      className="object-contain"
                     />
                   </div>
 
@@ -246,61 +245,62 @@ export default function Dashboard() {
           </div>
         </div>
 
-
-
         <div className="w-[470px] bg-white rounded-xl  my-24">
           <div>
             <SyllabusAnalysis />
           </div>
           <div className="border rounded-3xl pb-1 mr-3">
-              <div className="pl-2 pt-4">
-                  <div>
-                    
-                    <div className="grid grid-cols-2 items-end justify-end ">
-                        <div className="text-lg font-semibold pl-2">
-                              Question Analysis 
-                        </div>
-                        <div className="flex justify-end font-bold pr-12">
-                        {`${correctAnswers}/15`}
-                        </div>
-                      <div>
-                      
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <p className="text-gray-600 mt-2 pl-2">
-                      <strong>You scored <span className="font-bold">{correctAnswers}</span> correct out of {totalQuestions}</strong>. 
-                      {percentage != 100 ? " However, it still needs some improvements." : " Great job!"}
-                    </p>
-                    </div>
+            <div className="pl-2 pt-4">
+              <div>
+                <div className="grid grid-cols-2 items-end justify-end ">
+                  <div className="text-lg font-semibold pl-2">
+                    Question Analysis
                   </div>
-                
-                  <div className="flex items-center justify-center mb-10">
-                    <div className="relative w-36 h-36 mt-4">
-                      <div
-                        className="absolute inset-0 rounded-full bg-blue-800"
-                        style={{
-                          background: `conic-gradient(#008000 ${percentage}%,#ff0000 ${percentage}%)`,
-                        }}
-                      />
-                    
-                      <div className="absolute inset-3 flex items-center justify-center bg-white rounded-full m-4">
-                          <Image
-                            src="/target.png" // Replace with the path to your target icon or adjust as needed
-                            alt="Target icon"
-                            className="w-10 h-10"
-                          />
-                      </div>
-                    </div>
+                  <div className="flex justify-end font-bold pr-12">
+                    {`${correctAnswers}/15`}
+                  </div>
+                  <div></div>
+                </div>
+
+                <div>
+                  <p className="text-gray-600 mt-2 pl-2">
+                    <strong>
+                      You scored{" "}
+                      <span className="font-bold">{correctAnswers}</span>{" "}
+                      correct out of {totalQuestions}
+                    </strong>
+                    .
+                    {percentage != 100
+                      ? " However, it still needs some improvements."
+                      : " Great job!"}
+                  </p>
                 </div>
               </div>
+
+              <div className="flex items-center justify-center mb-10">
+                <div className="relative w-36 h-36 mt-4">
+                  <div
+                    className="absolute inset-0 rounded-full bg-blue-800"
+                    style={{
+                      background: `conic-gradient(#008000 ${percentage}%,#ff0000 ${percentage}%)`,
+                    }}
+                  />
+
+                  <div className="absolute inset-3 flex items-center justify-center bg-white rounded-full m-4">
+                    <Image
+                      src="/target.png" // Replace with the path to your target icon or adjust as needed
+                      alt="Target icon"
+                      width={40} // 10 * 4 for 40px (since 1 rem = 4px)
+                      height={40} // 10 * 4 for 40px
+                      className="object-contain" // Ensure the image fits the container
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-
       </div>
-
     </Layout>
   );
 }

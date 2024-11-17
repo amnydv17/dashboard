@@ -1,4 +1,3 @@
-// components/Layout.js
 import Sidebar from './SideBar';
 
 export default function Layout({ children }) {
